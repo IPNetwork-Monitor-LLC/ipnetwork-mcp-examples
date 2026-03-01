@@ -23,7 +23,7 @@ Python examples demonstrating how to use the [IPNetwork Monitor](https://ipnetwo
 1. Clone this repository:
 
 ```bash
-git clone https://gitlab.com/your-org/ipnetwork-mcp-examples.git
+git clone https://github.com/IPNetwork-Monitor-LLC/ipnetwork-mcp-examples.git
 cd ipnetwork-mcp-examples
 ```
 
@@ -128,7 +128,7 @@ async with IPNetworkMCPClient(url, token, verify_ssl=False) as client:
 ## API Reference
 
 For complete API documentation, see:
-- [IPNetwork MCP Documentation](https://ipnetwork-monitor.com/docs/mcp)
+- [IPNetwork MCP Documentation](https://ipnetwork-monitor.com/help/mcp-api-reference-manual.html)
 - [MCP Protocol Specification](https://modelcontextprotocol.io/)
 
 ### Common Operations
@@ -193,13 +193,12 @@ Contributions are welcome! Please:
 2. Create a feature branch (`git checkout -b feature/my-feature`)
 3. Commit your changes (`git commit -am 'Add new feature'`)
 4. Push to the branch (`git push origin feature/my-feature`)
-5. Open a Merge Request
+5. Open a Pull Request
 
 ## Support
 
 - **Product Website**: [https://ipnetwork-monitor.com/](https://ipnetwork-monitor.com/)
-- **Documentation**: [https://ipnetwork-monitor.com/docs/](https://ipnetwork-monitor.com/docs/)
-- **Issues**: Use the GitLab issue tracker for bug reports and feature requests
+- **Issues**: Use the [GitHub issue tracker](https://github.com/IPNetwork-Monitor-LLC/ipnetwork-mcp-examples/issues) for bug reports and feature requests
 
 ## License
 
