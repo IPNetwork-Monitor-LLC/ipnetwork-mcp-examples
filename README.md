@@ -86,7 +86,8 @@ ipnetwork-mcp-examples/
     ├── 02_create_host.py         # Create hosts and monitors
     ├── 03_alerting_setup.py      # Configure alerting
     ├── 04_monitor_state.py       # Query monitor states
-    └── 05_bulk_operations.py     # Bulk configuration example
+    ├── 05_bulk_operations.py     # Bulk configuration example
+    └── 06_check_monitor_status.py # Check specific monitor status
 ```
 
 ## Examples
@@ -108,6 +109,7 @@ python examples/01_basic_connection.py
 | `03_alerting_setup.py` | Set up email alerts and alerting rules |
 | `04_monitor_state.py` | Query current state and historical data |
 | `05_bulk_operations.py` | Bulk create multiple hosts from a list |
+| `06_check_monitor_status.py` | Check status of a specific monitor by name, qualified name, or ID |
 
 ## SSL/TLS Certificates
 
@@ -173,6 +175,29 @@ state = await client.call_tool("monitor-state", {
     "id": monitor_id
 })
 ```
+
+#### Check Specific Monitor Status
+
+Look up a monitor by ID, name, or qualified name and display its current state:
+
+```bash
+# By monitor ID
+python examples/06_check_monitor_status.py 27
+
+# By monitor name (case-insensitive search across all agents)
+python examples/06_check_monitor_status.py "HTTP(S)"
+
+# By qualified name: "<Monitor name> on <Host name>"
+python examples/06_check_monitor_status.py "Ping Check on Test Host"
+```
+
+When using a plain monitor name, if multiple monitors share the same name across
+different hosts, the script lists all matches and asks you to re-run with a
+specific ID or a qualified name. The qualified name format
+`"<Monitor name> on <Host name>"` disambiguates by restricting the search to the
+specified host.
+
+Exit codes: `0` = ok, `1` = warning or not found, `2` = down.
 
 ## Error Handling
 
